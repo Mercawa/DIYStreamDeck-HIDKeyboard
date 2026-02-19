@@ -10,11 +10,9 @@ Each button sends extended function keys (F13–F25), allowing direct and simple
 
 ## Features
 - Native USB HID keyboard
-- 12 physical buttons
-- Extended function keys (F13–F24)
+- 12 mechanical switch
 - Central RGB lighting (NeoPixel)
 - Multiple lighting modes
-- No external software required
 
 ## Hardware
 - Arduino Pro Micro (ATmega32u4)
