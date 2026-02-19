@@ -1,8 +1,5 @@
 # Stream Deck con Arduino (HID – F13 a F25)
 
-## Estado del proyecto
-Terminado
-
 ---
 
 ## Descripción
@@ -45,7 +42,7 @@ Al tratarse de un regalo para un streamer, el frente fue personalizado con su no
 El procedimiento es relativamente sencillo, por lo que no se tomaron muchas fotos del proceso.
 
 
-![Switches testing](images/finished_4.jpeg)
+![Switches testing](images/wiring_2.jpeg)
 
 ---
 
@@ -76,6 +73,8 @@ Modos disponibles:
 3. Modo breathing verde (color favorito de la persona que recibió el regalo)
 4. Modo verde fijo
 5. Modo reactivo, donde los LEDs se encienden y cambian de color al presionar un botón
+
+![Switches testing](images/finished_4.jpeg)
 
 ---
 
