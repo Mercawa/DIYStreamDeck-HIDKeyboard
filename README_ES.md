@@ -96,6 +96,8 @@ Luego de entregar el regalo, se identificaron algunas mejoras posibles:
 
 Estos son los principales puntos a mejorar detectados hasta el momento.
 
+[Demo en YouTube](https://www.youtube.com/watch?v=TU_LINK](https://www.youtube.com/shorts/s9-_362nHXg))
+
 ---
 
 ## Créditos e Inspiración
