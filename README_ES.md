@@ -45,7 +45,7 @@ Al tratarse de un regalo para un streamer, el frente fue personalizado con su no
 El procedimiento es relativamente sencillo, por lo que no se tomaron muchas fotos del proceso.
 
 
-![Switches testing](images/finished_1.jpeg)
+![Switches testing](images/finished_4.jpeg)
 
 ---
 
