@@ -1,27 +1,106 @@
 
-# DIY Stream Deck – HID Keyboard
+# Arduino Stream Deck (HID – F13 to F25)
 
-This is a completed DIY Stream Deck project based on an Arduino Pro Micro (ATmega32u4).
+## Project Status
+Finished
 
-The project started from a 3D printed enclosure found on GitHub that relied on custom configuration software.  
-Instead of using dedicated software, the firmware was redesigned so the device behaves as a standard USB HID keyboard.
+---
 
-Each button sends extended function keys (F13–F25), allowing direct and simple configuration inside third-party applications such as Discord, OBS, or any software that supports keyboard shortcuts.
+## Description
 
-## Features
-- Native USB HID keyboard
-- 12 mechanical switch
-- Central RGB lighting (NeoPixel)
-- Multiple lighting modes
+This project started by salvaging working black switches from a broken Sentey keyboard that a friend gave me.  
+After testing each switch with a multimeter, I decided to reuse them to build a custom Arduino-based Stream Deck.
 
-## Hardware
-- Arduino Pro Micro (ATmega32u4)
-- Mechanical switches
-- NeoPixel RGB LEDs
-- 3D printed enclosure
+Although there are many similar projects available online, most of them rely on third-party software.  
+I found this approach suboptimal, especially on Windows, where installing unverified applications can be inconvenient or problematic for many users.
 
-## Status
-✔ Project completed and fully functional.
+For this reason, I decided to take advantage of the Arduino HID (Human Interface Device) capability and make the device work as a native keyboard extension.  
+By using the rarely used F13 to F25 keys, which are fully recognized by Windows, this Stream Deck can be easily configured in third-party applications such as Discord, OBS, or any software that supports custom key bindings, without installing additional software.
 
-## Notes
-This project focuses on embedded systems and firmware development, prioritizing simplicity, reliability, and hardware-based solutions.
+---
+
+## 3D Printed Case
+
+I only printed the case from the following model (this is not my original design):
+
+https://www.printables.com/model/269757-stream-deck-macro-keyboard
+
+All STL files belong to their respective creator.  
+Full credits go to the original designer.
+
+The switches and keycaps were reused from the original keyboard.
+
+Since this device was made as a gift for a streamer, the front was customized with their artistic name and a small “XD :V” detail.
+
+---
+
+## Hardware Assembly
+
+1. I first installed the switches into the printed plate to improve efficiency and comfort while soldering.
+2. All switches were connected together using a common GND bridge.
+3. Each switch output was wired individually to a digital pin on the Arduino.
+4. A NeoPixel LED board was connected to pin A1 and mounted on the top.
+5. The switches were fixed from the back using hot glue.
+6. The Arduino was carefully positioned to align with the case USB port and fixed with hot glue to ensure a proper connection.
+
+The build process is relatively simple, which is why only a few photos were taken.
+
+---
+
+## Software and Functionality
+
+The code is intentionally simple and easy to understand.
+
+### Keyboard Features
+
+- Each button sends F13 to F25 key presses
+- Compatible with:
+  - Discord (mute, deafen, push-to-talk)
+  - OBS (scene transitions, actions)
+  - Any application that supports custom keyboard shortcuts
+- No external software required
+
+---
+
+## RGB Lighting Modes
+
+The first two buttons are used to control the lighting modes.
+
+Available modes:
+
+1. Rainbow mode  
+   The last button cycles through three different speed settings.
+2. RGB breathing mode with changing colors
+3. Green breathing mode (favorite color of the gift recipient)
+4. Solid green mode
+5. Reactive mode, where the LEDs light up and change color when a button is pressed
+
+---
+
+## Build Time
+
+The project was completed in approximately one week.  
+The longest part of the process is printing the case, but it is still a minor task overall.
+
+---
+
+## Known Limitations and Improvements
+
+After gifting the device, several possible improvements were identified:
+
+1. The internal wiring partially blocks the RGB lighting because the LED board was installed after the Arduino wiring.
+2. The front panel was printed in green; white or transparent filament could improve light diffusion.
+3. There is no lighting-off mode, which may be inconvenient since the Arduino remains powered while connected to a PC.
+4. The buttons used to control lighting modes still send F13, F14, and F25 key presses, which could cause conflicts depending on the configured shortcuts.
+
+These are the main issues observed so far, and there is room for further improvement.
+
+---
+
+## Credits and Inspiration
+
+This project was inspired by the following guide:
+
+https://www.instructables.com/HyperDeck-an-Arduino-Streamdeck/
+
+All credits go to the original authors.
