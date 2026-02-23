@@ -1,17 +1,40 @@
-# Arduino Stream Deck (HID – F13 to F25)
+# Arduino Stream Deck (HID – F13 to F24)
 
 ---
 
 ## Description
 
-This project started by salvaging working black switches from a broken Sentey keyboard that a friend gave me.  
+This project started by salvaging working black switches from a broken Sentey keyboard that a friend gave me.
 After testing each switch with a multimeter, I decided to reuse them to build a custom Arduino-based Stream Deck.
 
-Although there are many similar projects available online, most of them rely on third-party software.  
+Although there are many similar projects available online, most of them rely on third-party software.
 I found this approach suboptimal, especially on Windows, where installing unverified applications can be inconvenient or problematic for many users.
 
-For this reason, I decided to take advantage of the Arduino HID (Human Interface Device) capability and make the device work as a native keyboard extension.  
-By using the rarely used F13 to F25 keys, which are fully recognized by Windows, this Stream Deck can be easily configured in third-party applications such as Discord, OBS, or any software that supports custom key bindings, without installing additional software.
+For this reason, I decided to take advantage of the Arduino HID (Human Interface Device) capability and make the device work as a native keyboard extension.
+By using the rarely used F13 to F24 keys, which are fully recognized by Windows, this Stream Deck can be easily configured in third-party applications such as Discord, OBS, or any software that supports custom key bindings, without installing additional software.
+
+---
+
+## Bill of Materials
+
+| Component | Quantity |
+|---|---|
+| Arduino Pro Micro (or compatible HID-capable board) | 1 |
+| Mechanical switches (Black switches) | 12 |
+| Keycaps | 12 |
+| NeoPixel LED board (8 LEDs) | 1 |
+| 3D printed case | 1 |
+| Hot glue | — |
+| USB cable | 1 |
+
+---
+
+## Required Libraries
+
+Install both libraries via the Arduino Library Manager (`Sketch > Include Library > Manage Libraries`):
+
+- **Keyboard** (built-in with Arduino IDE for HID-capable boards)
+- **Adafruit NeoPixel** by Adafruit
 
 ---
 
@@ -21,12 +44,12 @@ I only printed the case from the following model (this is not my original design
 
 https://www.printables.com/model/269757-stream-deck-macro-keyboard
 
-All STL files belong to their respective creator.  
+All STL files belong to their respective creator.
 Full credits go to the original designer.
 
 The switches and keycaps were reused from the original keyboard.
 
-Since this device was made as a gift for a streamer, the front was customized with their artistic name and a small “XD :V” detail.
+Since this device was made as a gift for a streamer, the front was customized with their artistic name and a small "XD :V" detail.
 
 ---
 
@@ -41,6 +64,24 @@ Since this device was made as a gift for a streamer, the front was customized wi
 
 The build process is relatively simple, which is why only a few photos were taken.
 
+### Pin Mapping
+
+| Button | Arduino Pin | Key sent |
+|---|---|---|
+| 1 | 2 | F13 |
+| 2 | 3 | F14 |
+| 3 | 4 | F15 |
+| 4 | 5 | F16 |
+| 5 | 6 | F17 |
+| 6 | 7 | F18 |
+| 7 | 8 | F19 |
+| 8 | 9 | F20 |
+| 9 | 10 | F21 |
+| 10 | 16 | F22 |
+| 11 | 14 | F23 |
+| 12 | 15 | F24 |
+| NeoPixel | A1 | — |
+
 ![Wiring](images/wiring_2.jpeg)
 
 ---
@@ -53,7 +94,7 @@ The Arduino sketch is located at [`CODE_STREAMDECK/CODE_STREAMDECK.ino`](CODE_ST
 
 ### Keyboard Features
 
-- Each button sends F13 to F25 key presses
+- Each button sends F13 to F24 key presses
 - Compatible with:
   - Discord (mute, deafen, push-to-talk)
   - OBS (scene transitions, actions)
@@ -65,23 +106,24 @@ The Arduino sketch is located at [`CODE_STREAMDECK/CODE_STREAMDECK.ino`](CODE_ST
 ## RGB Lighting Modes
 
 The first two buttons are used to control the lighting modes.
+To change mode, hold both buttons simultaneously for 3 seconds.
 
 Available modes:
 
-1. Rainbow mode  
+1. Rainbow mode
    The last button cycles through three different speed settings.
 2. RGB breathing mode with changing colors
 3. Green breathing mode (favorite color of the gift recipient)
 4. Solid green mode
 5. Reactive mode, where the LEDs light up and change color when a button is pressed
 
-![Wiring](images/finished_4.jpeg)
+![Finished](images/finished_4.jpeg)
 
 ---
 
 ## Build Time
 
-The project was completed in approximately one week.  
+The project was completed in approximately one week.
 The longest part of the process is printing the case, but it is still a minor task overall.
 
 ---
@@ -93,7 +135,7 @@ After gifting the device, several possible improvements were identified:
 1. The internal wiring partially blocks the RGB lighting because the LED board was installed after the Arduino wiring.
 2. The front panel was printed in green; white or transparent filament could improve light diffusion.
 3. There is no lighting-off mode, which may be inconvenient since the Arduino remains powered while connected to a PC.
-4. The buttons used to control lighting modes still send F13, F14, and F25 key presses, which could cause conflicts depending on the configured shortcuts.
+4. The buttons used to control lighting modes still send F13 and F14 key presses, which could cause conflicts depending on the configured shortcuts.
 
 These are the main issues observed so far, and there is room for further improvement.
 
