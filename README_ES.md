@@ -50,6 +50,8 @@ El procedimiento es relativamente sencillo, por lo que no se tomaron muchas foto
 
 El código es simple y fácil de entender.
 
+El sketch de Arduino se encuentra en [`CODE_STREAMDECK/CODE_STREAMDECK.ino`](CODE_STREAMDECK/CODE_STREAMDECK.ino).
+
 ### Funciones de Teclado
 
 - Cada botón envía pulsaciones de teclas F13 a F25

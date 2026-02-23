@@ -49,6 +49,8 @@ The build process is relatively simple, which is why only a few photos were take
 
 The code is intentionally simple and easy to understand.
 
+The Arduino sketch is located at [`CODE_STREAMDECK/CODE_STREAMDECK.ino`](CODE_STREAMDECK/CODE_STREAMDECK.ino).
+
 ### Keyboard Features
 
 - Each button sends F13 to F25 key presses
