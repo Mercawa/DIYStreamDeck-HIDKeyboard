@@ -99,7 +99,7 @@ These are the main issues observed so far, and there is room for further improve
 
 ---
 
-[Watch demo video on YouTube](https://www.youtube.com/watch?v=TU_LINK](https://www.youtube.com/shorts/s9-_362nHXg))
+[Watch demo video on YouTube](https://www.youtube.com/shorts/s9-_362nHXg)
 
 ## Credits and Inspiration
 
